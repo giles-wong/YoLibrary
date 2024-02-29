@@ -56,13 +56,13 @@ final class Snowflake
      */
     private const EPOCH_OFFSET = 1483200000000;
     /** @var int 最后一次生成ID时的毫秒时间戳 */
-    private static int $lastMillisecondTimeStamp = 0;
+    private static $lastMillisecondTimeStamp = 0;
     /** @var int 当前机器ID 根据ip地址计算 */
-    private static int $machineId;
+    private static $machineId;
     /** @var int 当前进程ID */
-    private static int $processId;
+    private static $processId;
     /** @var int 起始的序号编号 */
-    private static int $sequenceId = 0;
+    private static $sequenceId = 0;
 
 
     /**
