@@ -5,7 +5,7 @@ use RuntimeException;
 
 class ServiceException extends RuntimeException
 {
-    protected string $errorCode;
+    protected $errorCode;
 
     public function __construct(
         string $message,

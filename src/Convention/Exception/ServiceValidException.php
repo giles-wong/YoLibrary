@@ -13,8 +13,8 @@ use YoLaile\Library\Convention\Code\CommonCode;
  */
 class ServiceValidException extends ServiceLogicException
 {
-    protected string $errorCode;
-    private array $violationItems;
+    protected $errorCode;
+    private $violationItems;
 
     public function __construct(
         string $message = CommonCode::INVALID_ARGS_MSG,

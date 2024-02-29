@@ -13,7 +13,7 @@ use YoLaile\Library\Convention\Code\ErrorCode;
  */
 class ServiceErrorException extends ServiceException
 {
-    protected string $errorCode;
+    protected $errorCode;
 
     public function __construct(
         string $message = ErrorCode::UNKNOWN_ERROR_MSG,
