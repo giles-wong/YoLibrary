@@ -18,13 +18,14 @@ class AuthSignature
     protected $signatureType = 'sha256';
 
     /** @var int 签名有效期 秒 */
-    protected $signatureTime = 60;
+    protected $expTime = 60;
     /** @var array 错误集合 */
     protected $error = [];
 
-    public function __construct(string $secretKey = null)
+    public function __construct(string $secretKey = null, int $expTime = 60)
     {
         $this->secretKey = $secretKey;
+        $this->expTime   = $expTime;
     }
 
     /**
@@ -97,7 +98,7 @@ class AuthSignature
         }
 
         //校验有效时间
-        if ((time() - (int)$headers[SignatureEnum::TIMESTAMP]) > $this->signatureTime) {
+        if ((time() - (int)$headers[SignatureEnum::TIMESTAMP]) > $this->expTime) {
             $this->error[] = '签名过期，请重新进行签名或校准本机时间';
             return false;
         }
