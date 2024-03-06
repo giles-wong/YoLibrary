@@ -12,7 +12,7 @@ namespace YoLaile\Library\Component\Signature;
 class AuthSignature
 {
     /** @var string 分配的签名密钥 */
-    protected $secretKey = 'e6xt3ogl96fmyu0pubq6fd13mfvanwpvehxnx4dqfex8wpayib3dcc0gewiujah8jafoclmadmze4a815qhhf0m7f0ryaak9qdnpv1j0l3ho2tfmracoxqtx419u4kva';
+    protected $secretKey = '4ac26f412bff1d24e127e2ee8a984b8011f78efdd72ea7e161235e4cbd9c90950b47a662f3dda2ce11735563cdc6b6c27b4e4ce7c52c41a6864a436ac1078897';
 
     /** @var string 签名算法 */
     protected $signatureType = 'sha256';
@@ -97,7 +97,7 @@ class AuthSignature
         }
 
         //校验有效时间
-        if (time() - $headers[SignatureEnum::TIMESTAMP] > $this->signatureTime) {
+        if ((time() - (int)$headers[SignatureEnum::TIMESTAMP]) > $this->signatureTime) {
             $this->error[] = '签名过期，请重新进行签名或校准本机时间';
             return false;
         }
