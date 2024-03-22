@@ -20,8 +20,11 @@ class TraceProcessor implements ProcessorInterface
      */
     public function __invoke(array $record): array
     {
+        if (empty(self::$traceId) && isset($_SERVER['HTTP_TRICE_ID'])) {
+            self::$traceId = $_SERVER['HTTP_TRICE_ID'];
+        }
 
-        self::$traceId = (self::$traceId || $_SERVER['HTTP_TRICE_ID']) ?? Snowflake::uniqueId();
+        self::$traceId = self::$traceId ?? Snowflake::uniqueId();
 
         $record['traceId'] = self::$traceId;
         $record['uri']     = $_SERVER['REQUEST_URI'] ?? null;
