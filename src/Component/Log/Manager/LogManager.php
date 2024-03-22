@@ -8,16 +8,16 @@ use Psr\Log\LoggerInterface;
 class LogManager implements LoggerInterface
 {
     /** @var array 日志实例 */
-    protected static array $logger = [];
+    protected static $logger = [];
 
     /** @var string 当前通道名称 */
-    protected string $logChannel;
+    protected $logChannel;
 
     /** @var LogManager|null 当前实例 */
     protected static $instance = null;
 
     /** @var string 模块名 */
-    protected string $module;
+    protected $module;
 
     /**
      * 初始化日志组件 初始化配置文件&&初始化链路
@@ -297,6 +297,8 @@ class LogManager implements LoggerInterface
      */
     public function __call(string $method, array $parameters)
     {
-        return $this->driver()->$method(...$parameters);
+        if (method_exists($this->driver(), $method)) {
+            return $this->driver()->$method(...$parameters);
+        }
     }
 }

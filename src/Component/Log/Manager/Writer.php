@@ -111,7 +111,7 @@ class Writer implements LoggerInterface
     {
         $file = Config::get('path') . '/'. $logChannel .'.log';
         $level = Config::isDebug()  ? 'debug' : Config::lowLevel();
-        $handler = new RotatingFileHandler($file, 0, $this->level($level));
+        $handler = new RotatingFileHandler($file, 14, $this->level($level));
         $handler->setFilenameFormat('{date}.{filename}', 'Ymd');
         $handler->setFormatter(SelectFormat::get(Config::get('format')));
 
