@@ -7,6 +7,7 @@ use Psr\Log\LoggerInterface;
 use think\App;
 use think\Log;
 use YoLaile\Library\Component\Log\Config;
+use YoLaile\Library\Component\Log\LogChannel;
 
 class ThinkLogManager extends Log implements LoggerInterface
 {
@@ -18,9 +19,6 @@ class ThinkLogManager extends Log implements LoggerInterface
 
     /** @var LogManager|null 当前实例 */
     protected static $instance = null;
-
-    /** @var string 模块名 */
-    protected $module;
 
     protected $app;
 
@@ -58,8 +56,6 @@ class ThinkLogManager extends Log implements LoggerInterface
             $this->logChannel = null;
             return $this;
         }
-
-        $this->module = $channel;
 
         return self::$logger[$channel] ?? $this->createLogger($channel);
     }
@@ -186,7 +182,7 @@ class ThinkLogManager extends Log implements LoggerInterface
             $this->logChannel = 'CLI';
         }
 
-        return Config::$defaultLog;
+        return LogChannel::default();
     }
 
 

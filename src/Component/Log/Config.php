@@ -25,14 +25,10 @@ class Config
         'buffer'     => true,
         'format'     => 'json',
         'level'      => 'debug',
-        'database'   => '',
     ];
 
     /** @var string 日志写入日期格式 */
     public static $dateFormat = 'Y-m-d H:i:s.u';
-
-    /** @var string 默认通道名称 最终生成文件名 */
-    public static $defaultLog = 'application';
 
     /**
      * 是否开启debug 模式
@@ -103,19 +99,17 @@ class Config
      * 获取写入格式配置
      *
      * @param string $style
-     * @param null $module
      * @return array|string
      * @author  Giles <giles.wang@aliyun.com|giles.wang@qq.com>
      * @date    2019/11/30 10:33
      */
-    public static function getFormat(string $style = 'json', $module = null)
+    public static function getFormat(string $style = 'json')
     {
         $baseField = [
             'datetime',
             'level_name',
             'level',
             'project',
-            'module',
             'traceId',
             'host',
             'uri',
@@ -129,9 +123,6 @@ class Config
         if (strcasecmp($style, 'json') !== 0) {
             $format = "";
             foreach ($baseField as $field) {
-                if (strcasecmp($field, 'module') === 0 && empty($module)) {
-                    continue;
-                }
                 if (strcasecmp($field, 'datetime') === 0) {
                     $format .="[%$field%] ";
                 } else {

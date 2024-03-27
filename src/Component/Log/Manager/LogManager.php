@@ -4,6 +4,7 @@ namespace YoLaile\Library\Component\Log\Manager;
 use YoLaile\Library\Component\Log\Config;
 use Monolog\Logger;
 use Psr\Log\LoggerInterface;
+use YoLaile\Library\Component\Log\LogChannel;
 
 class LogManager implements LoggerInterface
 {
@@ -15,9 +16,6 @@ class LogManager implements LoggerInterface
 
     /** @var LogManager|null 当前实例 */
     protected static $instance = null;
-
-    /** @var string 模块名 */
-    protected $module;
 
     /**
      * 初始化日志组件 初始化配置文件&&初始化链路
@@ -40,8 +38,6 @@ class LogManager implements LoggerInterface
             $this->logChannel = null;
             return $this;
         }
-
-        $this->module = $channel;
 
         return self::$logger[$channel] ?? $this->createLogger($channel);
     }
@@ -151,7 +147,7 @@ class LogManager implements LoggerInterface
             $this->logChannel = 'CLI';
         }
 
-        return Config::$defaultLog;
+        return LogChannel::default();
     }
 
 

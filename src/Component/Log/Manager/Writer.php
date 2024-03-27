@@ -20,7 +20,6 @@ class Writer implements LoggerInterface
 {
     /** @var LoggerInterface logger */
     protected $logger;
-    public $module = null;
 
     /** @var array Monolog 日志级别对应的数值 */
     protected $levels = [
