@@ -52,7 +52,7 @@ class ThinkLogManager extends Log implements LoggerInterface
 
     public function getLogger(string $channel = null)
     {
-        if (empty($channel)) {
+        if (empty($channel) || !in_array($channel, LogChannel::support())) {
             $this->logChannel = null;
             return $this;
         }
