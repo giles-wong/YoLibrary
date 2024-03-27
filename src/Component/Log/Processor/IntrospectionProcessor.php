@@ -1,7 +1,6 @@
 <?php
 namespace YoLaile\Library\Component\Log\Processor;
 
-use YoLaile\Library\Component\Log\Config;
 use Monolog\Logger;
 use Monolog\Processor\ProcessorInterface;
 
@@ -13,7 +12,7 @@ class IntrospectionProcessor implements ProcessorInterface
 
     public function __construct(
         $level = Logger::DEBUG,
-        array $skipClassesPartials = ['Monolog\\', 'Giles\\', 'Psr\\', 'Illuminate\\', 'illuminate\\']
+        array $skipClassesPartials = ['Monolog\\', 'YoLaile\\', 'Psr\\', 'Illuminate\\', 'illuminate\\']
     ) {
         $this->level = Logger::toMonologLevel($level);
         $this->skipClassesPartials = $skipClassesPartials;
