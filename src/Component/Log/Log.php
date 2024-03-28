@@ -5,6 +5,7 @@ use BadMethodCallException;
 use YoLaile\Library\Component\Log\Manager\LogManager;
 use Monolog\Logger;
 use RuntimeException;
+use YoLaile\Library\Component\Log\Manager\ThinkLogManager;
 
 /**
  * 日志组件调用入口
@@ -36,7 +37,7 @@ class Log
      */
     public static function __callStatic($method, $arguments)
     {
-        $instance = LogManager::getInstance();
+        $instance = LogManager::getInstance() ?? ThinkLogManager::getInstance();
         if ($instance === null) {
             throw new RuntimeException(' 日志组件获取实例失败，请查看组件是否正常被初始化！');
         }

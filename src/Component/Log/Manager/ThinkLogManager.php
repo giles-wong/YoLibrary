@@ -88,7 +88,7 @@ class ThinkLogManager extends Log implements LoggerInterface
      * @author Giles <giles.wang@aliyun.com|giles.wang@qq.com>
      * @date 2024/2/5 15:52
      */
-    public static function getInstance(): ?LogManager
+    public static function getInstance(): ?ThinkLogManager
     {
         return self::$instance;
     }
