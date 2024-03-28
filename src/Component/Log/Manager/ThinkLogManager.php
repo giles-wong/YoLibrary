@@ -76,7 +76,7 @@ class ThinkLogManager extends Log implements LoggerInterface
 
     public function record($msg, string $type = 'info', array $context = [], bool $lazy = true)
     {
-        $this->driver()->log(Logger::INFO, $msg, $context);
+        $this->driver()->log($type, $msg, $context);
 
         return $this;
     }
