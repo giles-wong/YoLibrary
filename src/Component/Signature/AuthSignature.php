@@ -102,6 +102,15 @@ class AuthSignature
             $this->error[] = '签名过期，请重新进行签名或校准本机时间';
             return false;
         }
+        //排除不需要签名的字段
+        if (isset($headers[SignatureEnum::WITHOUT]) && !empty($headers[SignatureEnum::WITHOUT])) {
+            $without = explode(',', $headers[SignatureEnum::WITHOUT]);
+            foreach ($without as $field) {
+                if (isset($payload[$field])) {
+                    unset($payload[$field]);
+                }
+            }
+        }
         //对传入参数按key进行正序排列
         ksort($payload);
         // 格式化为 key=value& 类型的字符串

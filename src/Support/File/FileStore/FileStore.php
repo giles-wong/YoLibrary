@@ -80,7 +80,7 @@ class FileStore implements IFileStore
     {
         switch ($type) {
             case 1:
-                $conf = ['key_id', 'key_secret', 'endpoint', 'bucket', 'domain'];
+                $conf = ['key_id', 'key_secret', 'endpoint', 'domain'];
                 foreach ($conf as $key) {
                     if (!isset($conf[$key]) || empty($config[$key])) {
                         throw new ServiceException(

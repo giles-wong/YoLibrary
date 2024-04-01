@@ -7,4 +7,5 @@ class SignatureEnum
     const NONCE     = 'yo-nonce';
     const TIMESTAMP = 'yo-timestamp';
     const SIGNATURE = 'yo-signature';
+    const WITHOUT   = 'yo-without';
 }
