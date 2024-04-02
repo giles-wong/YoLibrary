@@ -11,15 +11,14 @@ namespace YoLaile\Library\Component\Log;
  */
 class LogChannel
 {
-    protected const PHP_LOGIC_EXCEPTION = 'php.logic.exception';
-    protected const PHP_ERROR_EXCEPTION = 'php.error.exception';
-    protected const PHP_REQUEST_PARAMS  = 'php.request.params';
-
+    protected const PHP_LOGIC_EXCEPTION  = 'php.logic.exception';
+    protected const PHP_ERROR_EXCEPTION  = 'php.error.exception';
+    protected const PHP_REQUEST_PARAMS   = 'php.request.params';
     protected const PHP_RESPONSE_PARAMS  = 'php.response.params';
-    protected const PHP_BUSINESS_LOGIC  = 'php.business.logic';
-    protected const PHP_DEBUG           = 'php.debug';
-    protected const PHP_DOT             = 'php.application';
-    protected const PHP_EXECUTE_SQL     = 'php.execute.sql';
+    protected const PHP_BUSINESS_LOGIC   = 'php.business.logic';
+    protected const PHP_DEBUG            = 'php.debug';
+    protected const PHP_DOT              = 'php.application';
+    protected const PHP_EXECUTE_SQL      = 'php.execute.sql';
 
     /**
      * support 支持的Channel
