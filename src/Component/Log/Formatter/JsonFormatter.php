@@ -31,7 +31,7 @@ class JsonFormatter extends MonoJsonFormatter
             $record['message'] = substr($record['message'], 0, 2048);
         }
         //处理context
-        $record['context'] = $this->normalize($record['context']);
+        $record['context'] = json_encode($this->normalize($record['context']), JSON_UNESCAPED_UNICODE);
         return $this->toJson($record, true) . ($this->appendNewline ? "\n" : '');
     }
 
