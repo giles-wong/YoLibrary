@@ -7,6 +7,7 @@
     "php": ">=7.2",
     "ext-json": "*",
     "ext-openssl": "*",
+    "ext-fileinfo": "*",
     "symfony/console": "^5.3.4"
   },
   "require-dev": {

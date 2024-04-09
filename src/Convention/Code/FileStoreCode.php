@@ -8,4 +8,6 @@ class FileStoreCode
 
     const FILE_STORE_CONFIG     = 'F_002';
     const FILE_STORE_CONFIG_MSG = '文件上传配置项错误或者缺失';
+
+    const FILE_STORE_UPLOAD_ERROR = 'F_099';
 }
