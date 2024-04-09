@@ -5,6 +5,7 @@ use OSS\OssClient;
 use YoLaile\Library\Convention\Code\FileStoreCode;
 use YoLaile\Library\Convention\Exception\ServiceLogicException;
 use YoLaile\Library\Snowflake;
+use YoLaile\Library\Support\File\AliYunBucketEnum;
 use YoLaile\Library\Support\File\FileHttpInfo;
 use YoLaile\Library\Support\File\FileMetaInfo;
 
@@ -57,6 +58,10 @@ class AliYunOss implements IDriver
                 $metaInfo->getPath(),
                 ['ContentType' => $contentType]
             );
+
+            if ($metaInfo->getBucket() == AliYunBucketEnum::getImageBucket()) {
+                $showFilePath = 'https://'. $this->domain.'/'. $showFilePath;
+            }
 
             return new FileHttpInfo($showFilePath, Snowflake::uniqueId(), $md5);
         } catch (\Exception $exception) {
