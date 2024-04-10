@@ -2,8 +2,33 @@
 
 PHP Code Library 收集整理常用的php工具类库
 
-# 使用
-`composer require yolaile/library`
+# Install
+1. 方式一
+```metadata json
+   composer require yolaile/library
+```
+
+2. 方式二
+   Step1: 在项目composer.json文件require段中增加如下：
+```metadata json
+{
+    "require": {
+        "yolaile/library": "^0.3"
+    }
+}
+```
+Step2: 执行 ``` composer update yolaile/library```
+
+# Document
+
+## Component
+
+### 1. Log
+日志组件库，提供日志写入功能
+- `(2024-03-20)` Log:[Log, 各项目内日志记录](document/Component/Log.md)
+### 2. Signature
+api 接口签名验证
+- `(2024-04-01)` Signature:[Signature, api 接口签名](document/Component/Signature.md)
 
 ## IdCard.php
 > 用于校验中国大陆居民身份证号码合法性，获取对应的信息，如地区、性别、生日、星座、属相等,身份证代码计算方式为GB 11643-1999标准
