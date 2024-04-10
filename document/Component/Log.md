@@ -7,9 +7,6 @@ Log 组件库
 ## Class Name
 ``` YoLaile\Library\Component\Log ```
 
-## Requirements
-
-## Convention
 1、日志组件初始化配置 示例 ```config.sample.php```
 ```php
 
