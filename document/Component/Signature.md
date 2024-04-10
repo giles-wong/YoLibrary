@@ -1,4 +1,4 @@
-***[Return Index](README.md)***
+***[Return Index](../../README.md)***
 
 Signature
 =====================
@@ -291,4 +291,4 @@ func main() {
 ```
 
 
-***[Return Index](README.md)***
+***[Return Index](../../README.md)***

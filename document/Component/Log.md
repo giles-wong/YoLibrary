@@ -1,4 +1,4 @@
-***[Return Index](README.md)***
+***[Return Index](../../README.md)***
 
 Log
 =====================
@@ -133,4 +133,4 @@ Log::getLogger('模块名字')->info('这是描述', ['aa' => '这是一个', 'b
 {"datetime":"2024-04-02 14:22:32.580413","level":"info","traceId":"959820134163537951","host":"172.19.0.2","uri":"/seller/goods/purGoodsList","file":"Http/Middleware/RequestLogMiddleware.php","line":27,"message":"记录请求参数","context":{"url":"http://giles-sweb.yolaile.com/seller/goods/purGoodsList","method":"GET","header":{"cookie":["laravel_session=eyJpdiI6Im5GOWY1cXFpUVZPaGhXZ1BPUUtPRFE9PSIsInZhbHVlIjoiNUF5ZVlaMDZIWld4QmFETVBERWQwUEhmcDg4Y1g0MG1aUlcwNERQYTFhYWVlWm03Y3lwRm9saTFMVWIwNmNmdWoxRmxSeVJtRG80WlpUS2tUREp3OTNLTE80dTd4cFJGcU5aRnM4VGIvYS8yVzRWZUZabHZQTzQrdFJLUDloeDkiLCJtYWMiOiJhZGYzNTdmYzU5Njc3YWUwMGYzMzNmMTI4MWViMDYwY2U4ZWJhYWQwNWVlZTYwNjgxZTAwZDY3YjM5YWQwMjQ5In0%3D"],"connection":["keep-alive"],"accept-encoding":["gzip, deflate, br"],"host":["giles-sweb.yolaile.com"],"postman-token":["666f8e67-f10b-4c6c-ba50-cedc5a127855"],"accept":["*/*"],"user-agent":["PostmanRuntime/7.36.3"],"token":["ac909be1fbf187a35bc25619109f35b2"]},"body":{"s":"//seller/goods/purGoodsList","page_size":"10","page":"1","price_ask":"1000,2000,3000","pur_status":"1","active_id":"364"},"uriParam":"page_size=10&page=1&price_ask=1000,2000,3000&pur_status=1&active_id=364"}}
 ```
 
-***[Return Index](README.md)***
+***[Return Index](../../README.md)***
