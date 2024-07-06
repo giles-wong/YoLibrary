@@ -1,15 +1,17 @@
 <?php
+
 namespace YoLaile\Library\Convention\Exception;
 
 use YoLaile\Library\Convention\Code\ErrorCode;
 
 /**
  *
- * ServiceErrorException 系统错误异常类
+ * Class ServiceErrorException
+ *
  * @package YoLaile\Library\Convention\Exception
  *
  * @author Giles <giles.wang@aliyun.com|giles.wang@qq.com>
- * @date 2024/2/29 11:39
+ * @date 2024/7/5 16:55
  */
 class ServiceErrorException extends ServiceException
 {

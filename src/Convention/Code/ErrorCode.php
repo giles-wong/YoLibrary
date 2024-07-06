@@ -1,9 +1,19 @@
 <?php
+
 namespace YoLaile\Library\Convention\Code;
 
 use Throwable;
 use YoLaile\Library\Convention\Exception\ServiceErrorException;
 
+/**
+ *
+ * 错误码常量
+ *
+ * @package YoLaile\Library\Convention\Code
+ *
+ * @author Giles <giles.wang@aliyun.com|giles.wang@qq.com>
+ * @date 2024/7/5 16:57
+ */
 class ErrorCode
 {
     const ERROR_PREFIX = "SYS_";
@@ -35,29 +45,23 @@ class ErrorCode
     public static function isError(string $code): bool
     {
         return ErrorCode::UNKNOWN_ERROR === $code ||
-            (!empty($code) && self::startWith($code, self::ERROR_PREFIX));
+            (!empty($code) && self::startWith($code));
     }
 
-    private static function startWith($str, $needle): bool
+    private static function startWith($str): bool
     {
-        return strpos($str, $needle) === 0;
+        return str_starts_with($str, self::ERROR_PREFIX);
     }
 
     /**
      * 用于抛出ServiceErrorException
-     *
      * @param string $code
      * @param string $msg
      * @param Throwable|null $cause
      * @return ServiceErrorException
-     * @author Giles <giles.wang@aliyun.com|giles.wang@qq.com>
-     * @date 2024/2/29 11:40
      */
-    public static function error(
-        string $code,
-        string $msg,
-        Throwable $cause = null
-    ): ServiceErrorException {
+    public static function error(string $code, string $msg, Throwable $cause = null): ServiceErrorException
+    {
         return new ServiceErrorException($msg, $code, $cause);
     }
 }

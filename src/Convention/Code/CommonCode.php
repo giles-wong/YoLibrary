@@ -1,13 +1,11 @@
 <?php
+
 namespace YoLaile\Library\Convention\Code;
 
 /**
- *
- * 公共业务异常码
+ * 公共的业务异常错误码
+ * Class CommonCode
  * @package YoLaile\Library\Convention\Code
- *
- * @author Giles <giles.wang@aliyun.com|giles.wang@qq.com>
- * @date 2024/2/29 11:35
  */
 class CommonCode
 {

@@ -1,20 +1,21 @@
 <?php
-namespace YoLaile\Library\Convention\Exception;
 
-use YoLaile\Library\Convention\Code\CommonCode;
+namespace YoLaile\Library\Convention\Exception;
 
 /**
  *
  * Class ServiceValidException 验证参数异常类
+ *
  * @package YoLaile\Library\Convention\Exception
  *
  * @author Giles <giles.wang@aliyun.com|giles.wang@qq.com>
- * @date 2024/2/29 11:42
+ * @date 2024/7/5 16:56
  */
 class ServiceValidException extends ServiceLogicException
 {
+
     protected $errorCode;
-    private $violationItems;
+    private   $violationItems;
 
     public function __construct(
         string $message = CommonCode::INVALID_ARGS_MSG,

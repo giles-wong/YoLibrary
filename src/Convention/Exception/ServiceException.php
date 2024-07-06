@@ -1,8 +1,18 @@
 <?php
+
 namespace YoLaile\Library\Convention\Exception;
 
 use RuntimeException;
 
+/**
+ *
+ * Class ServiceException 服务调用异常
+ *
+ * @package YoLaile\Library\Convention\Exception
+ *
+ * @author Giles <giles.wang@aliyun.com|giles.wang@qq.com>
+ * @date 2024/7/5 16:55
+ */
 class ServiceException extends RuntimeException
 {
     protected $errorCode;
@@ -17,11 +27,13 @@ class ServiceException extends RuntimeException
     }
 
     /**
-     * 获取下游服务的异常码
+     * getErrorCode 获取下游服务的异常码
      *
      * @return string
-     * @author Giles <giles.wang@aliyun.com|giles.wang@qq.com>
-     * @date 2024/2/29 11:38
+     *
+     * @author JadeSouth <jadesouth@aliyun.com>
+     * @author HuWei <huwei@huwei.com>
+     * @date   2018-11-08 16:55:12
      */
     public function getErrorCode(): string
     {
