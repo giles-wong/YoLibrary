@@ -2,6 +2,8 @@
 
 namespace YoLaile\Library\Convention\Exception;
 
+use YoLaile\Library\Convention\Code\CommonCode;
+
 /**
  *
  * Class ServiceValidException 验证参数异常类
