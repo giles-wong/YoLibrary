@@ -39,7 +39,6 @@ final class Results
 
     public static function invalidByEx(ServiceValidException $ex): Result
     {
-
         return new InvalidResult($ex->getMessage(), $ex->getErrorCode(), $ex->getViolationItems());
     }
 

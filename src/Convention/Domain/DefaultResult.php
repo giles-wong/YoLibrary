@@ -75,10 +75,10 @@ class DefaultResult implements Result
 
     /**
      * 设置数据
-     * @param object $data 数据
+     * @param  $data 数据
      * @return Result
      */
-    public function setData(object $data): Result
+    public function setData($data)
     {
         $this->data = $data;
         return $this;

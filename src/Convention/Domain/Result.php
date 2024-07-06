@@ -52,17 +52,17 @@ interface Result extends JsonSerializable
 
     /**
      * 设置数据
-     * @param object $data 数据
+     * @param  mixed $data 数据
      * @return Result
      */
-    public function setData(object $data): Result;
+    public function setData($data);
 
     /**
      * 设置验证失败的字段
      * @param array  $violationItems 验证失败的字段
      * @return Result
      */
-    public function setViolationItems(array $violationItems): Result;
+    public function setViolationItems(array $violationItems);
 
     /**
      * 添加 ViolationItem

@@ -17,7 +17,7 @@ class ServiceValidException extends ServiceLogicException
 {
 
     protected $errorCode;
-    private   $violationItems;
+    protected $violationItems;
 
     public function __construct(
         string $message = CommonCode::INVALID_ARGS_MSG,
